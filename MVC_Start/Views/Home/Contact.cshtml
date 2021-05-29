@@ -1,5 +1,5 @@
 ﻿@{
-  Layout = null;
+    Layout = null;
 }
 
 @model GuestContact
@@ -9,22 +9,39 @@
 <p>Name: @Model.Name</p>
 <p>Email: @Model.Email</p>
 <p>Phone number: @Model.Phone</p>
+<p>Address: @Model.Address</p>
+<p>City: @Model.City</p>
+<p>State: @Model.State</p>
+<p>Zip: @Model.Zip</p>
 
 <form asp-controller="Home" asp-action="Contact" method="post">
-  <p>Name: <input asp-for="Name" /></p>
-  <p>Email: <input asp-for="Email" /></p>
-  <p>Phone number: <input asp-for="Phone" /></p>
+    <p>Name: <input asp-for="Name" /></p>
+    <p>Email: <input asp-for="Email" /></p>
+    <p>Phone number: <input asp-for="Phone" /></p>
+    <p>Address: <input asp-for="Address" /></p>
+    <p>City: <input asp-for="City" /></p>
+    <p>State: <input asp-for="State" /></p>
+    <p>Zip: <input asp-for="Zip" /></p>
 
-  <button type="submit">Submit</button>
+
+    <button type="submit">Submit</button>
 </form>
 
 <a href="/home/index">Home page in html</a>
+
+<a href="/home/pref">Guest Preference</a>
+
 <p>
 
 </p>
-<a 
-  asp-controller="Home" 
-  asp-action="Index" 
-  asp-route-id="12">
-  Home page
+<a asp-controller="Home"
+   asp-action="Index"
+   asp-route-id="12">
+    Home page
+</a>
+
+<a asp-controller="Home"
+   asp-action="pref"
+   asp-route-id="13">
+    Contacts
 </a>

@@ -23,9 +23,13 @@ namespace MVC_Start.Controllers
     {
       GuestContact contact = new GuestContact();
 
-      contact.Name = "Manish Agrawal";
-      contact.Email = "magrawal@usf.edu";
-      contact.Phone = "813-974-6716";
+      contact.Name = "Natarajan Arumugam";
+      contact.Email = "arumugamn@usf.edu";
+      contact.Phone = "713-835-6995";
+      contact.Address = "123 xyz street";
+      contact.City = "Tampa";
+      contact.State = "FL";
+      contact.Zip = "33614";
 
       
       /* alternate syntax to initialize object 
@@ -42,7 +46,26 @@ namespace MVC_Start.Controllers
       return View(contact);
     }
 
-    [HttpPost]
+    public IActionResult Pref()
+    {
+      GuestPref pref = new GuestPref();
+
+      pref.Room = "Suite";
+      pref.Beds = "2";
+      pref.Pool = "Yes";
+      pref.Internet = "Yes";
+
+      return View(pref);
+    }
+
+
+        [HttpPost]
+        public IActionResult Pref(GuestPref pref)
+        {
+            return View(pref);
+        }
+
+        [HttpPost]
     public IActionResult Contact(GuestContact contact)
     {
       return View(contact);
